@@ -5,6 +5,7 @@
         "pretty": true,
         "target": "es6",
         "outDir": "./dist",
+        "sourceMap": false
     },
     "include": [
         "**/*.ts"
