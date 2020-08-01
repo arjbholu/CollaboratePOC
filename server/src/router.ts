@@ -19,13 +19,6 @@ export class Routes {
         app.route("/project")
         .post(this.projectController.addNewProject);
 
-        app.route("/")
-        .get((req: Request, res: Response) => {
-            res.status(200).send({
-                message: "Successfully hit!"
-            })
-        })
-
         app.route("/getProjectItems").get((req, res) => {
             res.send(project1);
         });

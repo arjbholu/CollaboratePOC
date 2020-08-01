@@ -6,6 +6,7 @@ const Project = monogoose.model('Project', ProjectSchema);
 
 export class ProjectController {
     public addNewProject(req: Request, res: Response) {
+        console.log(req.body);
         let newProject = new Project(req.body);
 
         newProject.save((err, project) => {
