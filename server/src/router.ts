@@ -14,6 +14,9 @@ export class Routes {
         };
 
         app.route("/project")
+        .get(this.projectController.getProjects);
+
+        app.route("/project")
         .post(this.projectController.addNewProject);
 
         app.route("/")

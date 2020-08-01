@@ -12,4 +12,13 @@ export class ProjectController {
             err ? res.send(err) : res.json(project)
         })
     }
+
+    public getProjects(req: Request, res: Response) {
+        Project.find({}, (err, project) => {
+            if (err) {
+                res.send(err);
+            }
+            res.json(project);
+        })
+    }
 }
