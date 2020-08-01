@@ -7,7 +7,7 @@ const router_1 = require("./router");
 const mongoose = require("mongoose");
 class App {
     constructor() {
-        this.mongoUrl = "mongodb://testuser1:testuser.1@ds016108.mlab.com:16108/collaborate-poc";
+        this.mongoUrl = "";
         this.app = express();
         this.config();
         this.routes = new router_1.Routes();

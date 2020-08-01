@@ -7,7 +7,7 @@ import * as mongoose from "mongoose";
 class App {
     public app: express.Application;
     public routes: Routes;
-    public mongoUrl: string = "mongodb://testuser1:testuser.1@ds016108.mlab.com:16108/collaborate-poc" 
+    public mongoUrl: string = "" 
     constructor() {
         this.app = express();
         this.config();
