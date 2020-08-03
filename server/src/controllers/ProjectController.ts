@@ -22,4 +22,14 @@ export class ProjectController {
             res.json(project);
         })
     }
+
+    public async addTasksToProject(req: Request, res: Response) {
+        let project = await Project.findOne({"_id": req.body.projectId});
+
+        project.taskList = [...project.taskList, ...req.body.tasks];
+
+        project.save((err, project) => {
+            err ? res.send(err) : res.json(project)
+        })
+    }
 }

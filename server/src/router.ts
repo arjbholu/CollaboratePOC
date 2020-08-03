@@ -23,5 +23,8 @@ export class Routes {
             res.send(project1);
         });
 
+        app.route("/TaskToProject")
+        .post(this.projectController.addTasksToProject);
+
     }
 }
