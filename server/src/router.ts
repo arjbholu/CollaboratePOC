@@ -23,8 +23,11 @@ export class Routes {
             res.send(project1);
         });
 
-        app.route("/TaskToProject")
+        app.route("/taskToProject")
         .post(this.projectController.addTasksToProject);
+
+        app.route("/taskToProject/:projectId")
+        .get(this.projectController.getTasksToProject);
 
     }
 }

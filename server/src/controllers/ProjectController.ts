@@ -32,4 +32,10 @@ export class ProjectController {
             err ? res.send(err) : res.json(project)
         })
     }
+
+    public async getTasksToProject(req: Request, res: Response) {
+        let project = await Project.findOne({"_id": req.params.projectId});
+
+        res.json(project);
+    }
 }
