@@ -1,0 +1,29 @@
+.column {
+    width: 20vw;
+    min-height: 70vh;
+    font-size: 40px;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.column__blue {
+    background-color: #5acae7;
+}
+
+.column__pink {
+    background-color: #e76566;
+}
+
+.column__yellow {
+    background-color: #fcb041;
+}
+
+.column__green {
+    background-color: #8cc640
+}
