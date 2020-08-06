@@ -1,6 +1,6 @@
 import React from 'react';
-import "./Column.css";
-import Card from "./Card";
+import "./../Styles/Column.css";
+import Card from "./CardComponent";
 
 
 const Column = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Column from './Column';
+import Column from './Components/ColumnComponent';
 
 function App() {
   return (
