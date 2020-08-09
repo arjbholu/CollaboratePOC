@@ -7,7 +7,7 @@ import Card from "./CardComponent";
 const Container = styled.div`
     margin: 8px;
     border: 1px solid lightgrey;
-    border-radius: 2px
+    border-radius: 2px;
 `
 const Title = styled.h3`
   padding: 8px;
@@ -19,7 +19,7 @@ const CardList = styled.div`
 const Column = ({ column, tasks }) => {
     return (
         <Container>
-            <Title>{column.Title}</Title>
+            <Title>{column.title}</Title>
             <Droppable droppableId={column.id}>
                 {provided => (
                     <CardList
@@ -29,7 +29,7 @@ const Column = ({ column, tasks }) => {
                         {tasks.map((task, index) => (
                             <Card key={task.id} task={task} index={index} />
                         ))}
-                        {provided.placeHolder}
+                        {provided.placeholder}
                     </CardList>
                 )}
             </Droppable>
