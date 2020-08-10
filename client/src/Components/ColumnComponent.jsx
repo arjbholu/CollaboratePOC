@@ -16,9 +16,9 @@ const CardList = styled.div`
   padding: 8px;
 `;
 
-const Column = ({ column, tasks }) => {
+const Column = ({ id, column, tasks }) => {
     return (
-        <Container>
+        <Container key={id}>
             <Title>{column.title}</Title>
             <Droppable droppableId={column.id}>
                 {provided => (
@@ -27,7 +27,7 @@ const Column = ({ column, tasks }) => {
                         {...provided.droppableProps}
                     >
                         {tasks.map((task, index) => (
-                            <Card key={task.id} task={task} index={index} />
+                            <Card key={index} task={task} index={index} />
                         ))}
                         {provided.placeholder}
                     </CardList>

@@ -10,8 +10,8 @@ const Container = styled.div`
     margin-bottom: 8px;
 `
 
-const Card = ({ key, task, index }) => (
-    <Draggable key={key} draggableId={task.id} index={index}>
+const Card = ({ task, index }) => (
+    <Draggable key={index} draggableId={task.id} index={index}>
         {provided => (
             <Container
                 ref={provided.innerRef}
