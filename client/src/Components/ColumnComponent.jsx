@@ -37,28 +37,6 @@ const Column = ({ id, column, tasks }) => {
                 )}
             </Droppable>
         </Container>
-
-        // <div className="container">
-        //     <div className="column column__blue" onDropOver={onDropFunction} onDrop={onDropFunction}>
-        //         <div className="column__header">
-        //             Backlog
-        //         </div>
-        //         <Card value="Hello there"/>
-        //         <Card value="Okay"/>
-        //     </div>
-
-        //     <div className="column column__pink" onDropOver={onDropFunction} onDrop={onDropFunction}>
-        //         <label>To-Do</label>
-        //     </div>
-
-        //     <div className="column column__yellow">
-        //         <label>Doing</label>
-        //     </div>
-
-        //     <div className="column column__green">
-        //         <label>Done</label>
-        //     </div>
-        // </div>
     );
 };
 
