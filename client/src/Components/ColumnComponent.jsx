@@ -8,6 +8,7 @@ const Container = styled.div`
     margin: 8px;
     border: 1px solid lightgrey;
     border-radius: 2px;
+    min-width: 20%
 `
 const Title = styled.h3`
   padding: 8px;
@@ -26,9 +27,10 @@ const Column = ({ id, column, tasks }) => {
                         ref={provided.innerRef}
                         {...provided.droppableProps}
                     >
-                        {tasks.map((task, index) => (
-                            <Card key={index} task={task} index={index} />
-                        ))}
+                        {tasks.map((task, index) => {
+                            console.log(column.id, task);
+                            return <Card key={index} task={task} index={index} />
+                        })}
                         {provided.placeholder}
                     </CardList>
                 )}

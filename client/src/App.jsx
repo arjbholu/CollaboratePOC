@@ -37,7 +37,7 @@ export default class App extends React.Component {
         // newData = data.columns[destinationColumn].taskIds[result.destination.index];
         // // console.log(data
         this.setState({
-            newData
+            data: newData
         });
         // console.log(sourceColumn, sourceTaskId, destinationColumn, destinationTaskId);
 
@@ -49,15 +49,15 @@ export default class App extends React.Component {
     }
 
     render() {
-        console.log(this.state.initialData)
+        console.log(this.state)
         return (
             <div className="App">
                 <Container>
                     <DragDropContext onDragEnd={this.onDragEnd}>
-                        {this.state.data.columnOrder.map((columnId) => {
+                        {this.state.data.columnOrder.map((columnId, index) => {
                             const column = this.state.data.columns[columnId];
                             const tasks = column.taskIds.map(taskid => this.state.data.tasks[taskid])
-                            return <Column key={column.columnId} id={column.Id} column={column} tasks={tasks} />
+                            return <Column key={index} id={column.Id} column={column} tasks={tasks} />
                         })}
                     </DragDropContext>
                 </Container>

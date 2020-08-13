@@ -11,7 +11,7 @@ const Container = styled.div`
 `
 
 const Card = ({ task, index }) => (
-    <Draggable key={index} draggableId={task.id} index={index}>
+    <Draggable key={task.id} draggableId={task.id} index={index}>
         {provided => (
             <Container
                 ref={provided.innerRef}
