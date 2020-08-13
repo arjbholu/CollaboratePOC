@@ -8,7 +8,8 @@ const Container = styled.div`
     margin: 8px;
     border: 1px solid lightgrey;
     border-radius: 2px;
-    min-width: 20%
+    min-width: 20%;
+    height: fit-content;
 `
 const Title = styled.h3`
   padding: 8px;

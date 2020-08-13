@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Column from './Components/ColumnComponent';
 import { DragDropContext } from 'react-beautiful-dnd';
@@ -8,6 +8,11 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   flexDirection: row;
+  justify-content: center;
+`
+
+const Title = styled.div`
+  text-align: center
 `
 
 export default class App extends React.Component {
@@ -24,34 +29,21 @@ export default class App extends React.Component {
             return;
         }
 
-
         const sourceColumn = result.source.droppableId;
         const destinationColumn = result.destination.droppableId;
-        const sourceTask =  this.state.data.columns[sourceColumn].taskIds[result.source.index];
         const newData = this.state.data;
         const [sourceTasks] = newData.columns[sourceColumn].taskIds.splice(result.source.index, 1);
         newData.columns[destinationColumn].taskIds.splice(result.destination.index, 0, sourceTasks);
-        // console.log(destinationTasks);
-        // data.columns[sourceColumn].taskIds = sourceTasks;
-        // newData.columns[destinationColumn].taskIds = [...this.state.data.columns[destinationColumn].taskIds, sourceTask];
-        // newData = data.columns[destinationColumn].taskIds[result.destination.index];
-        // // console.log(data
         this.setState({
             data: newData
         });
-        // console.log(sourceColumn, sourceTaskId, destinationColumn, destinationTaskId);
-
-        // if (result.destination.droppableId != result.source.droppableId) {
-        //     data = data.
-        // }
-
-        console.log(result);
     }
 
     render() {
         console.log(this.state)
         return (
             <div className="App">
+                <Title>{this.state.data.projectName}</Title>
                 <Container>
                     <DragDropContext onDragEnd={this.onDragEnd}>
                         {this.state.data.columnOrder.map((columnId, index) => {
